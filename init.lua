@@ -41,7 +41,11 @@ return {
         require("copilot_cmp").setup()
         astronvim.add_user_cmp_source "copilot"
       end,
-    }
+    },
+    { "gptlang/CopilotChat.nvim",
+      after = { "copilot.lua" },
+      lazy = false,
+    },
   },
 
   cmp = {
@@ -68,5 +72,9 @@ return {
         },
       },
     },
-  }
+  },
+
+  polish = function()
+    vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
+  end,
 }
